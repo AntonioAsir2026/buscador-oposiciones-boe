@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Buscador BOE de Informática - ASIR</title>
+  <link rel="stylesheet" href="estilos.css">
+  <script src="web.js" defer></script>
+</head>
+<body>
+  <main class="contenedor">
+    <header>
+      <p class="pequeno">Proyecto Intermodular · ASIR</p>
+      <h1>Buscador de oposiciones de informática</h1>
+      <p>Ofertas de empleo público del BOE, con enlaces a los anuncios y PDF oficiales.</p>
+    </header>
+
+    <section class="panel" aria-labelledby="titulo-filtros">
+      <h2 id="titulo-filtros">Buscar convocatorias</h2>
+      <label for="buscar">Palabra clave</label>
+      <input id="buscar" type="search" placeholder="Ejemplo: Técnico Auxiliar, informática...">
+      <div class="cabecera-opciones">
+        <h3>Filtrar por comunidades autónomas</h3>
+        <button id="todas" type="button">Quitar filtros</button>
+      </div>
+      <div id="comunidades" class="comunidades" role="group" aria-label="Comunidades autónomas"></div>
+      <label for="organismo">Administración</label>
+      <select id="organismo">
+        <option value="">Todas</option>
+        <option value="Ayuntamiento">Ayuntamientos / Administración local</option>
+        <option value="Universidad">Universidades</option>
+        <option value="Estado">Estado y otras administraciones</option>
+      </select>
+      <label for="acceso">Tipo de acceso</label>
+      <select id="acceso">
+        <option value="">Todos</option>
+        <option value="Turno libre">Turno libre</option>
+        <option value="Promoción interna">Promoción interna</option>
+        <option value="Libre e interna">Libre e interna</option>
+        <option value="No indicado">No indicado</option>
+      </select>
+    </section>
+
+    <section class="panel" aria-live="polite">
+      <h2>Resultados <span id="contador"></span></h2>
+      <p id="actualizacion" class="pequeno">Cargando datos...</p>
+      <div id="resultados"></div>
+    </section>
+    <footer>Datos: <a href="https://www.boe.es/datosabiertos/api/api.php" target="_blank" rel="noopener noreferrer">API oficial del BOE</a>. Consulta las bases y los plazos en el documento oficial. La búsqueda por palabras clave puede no detectar todas las plazas.</footer>
+  </main>
+</body>
+</html>
